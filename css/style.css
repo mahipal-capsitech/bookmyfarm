@@ -10,12 +10,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background:transparent;
+  background: transparent; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: transparent; 
 }
 
 /* Handle on hover */
@@ -56,8 +56,8 @@ html,body{
 {
     display:none;
     position: absolute;
-    top: 2%;
-    right:2%;
+    top: 2rem;
+    right:1rem;
     animation-name: error;
     animation-duration: 0.3s;
     /* animation-iteration-count: infinite;
@@ -175,6 +175,7 @@ html,body{
     color: #222629;
   }
   .nav .profile img{
+    object-fit: cover;
       width: 40px;
       height: 40px;
 border-radius: 50%;
@@ -392,6 +393,243 @@ to{
    border-radius: 50%;
 }
 /* end of sales das */
+
+/* manage account das start*/
+.header{
+  width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+}
+.header .head_fst{
+  display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+.header span{
+  font-size: 0.9rem;
+  color: rgb(126, 121, 121);
+  padding-left: 0.5rem;
+}
+.green_cir{
+  margin-left: 1rem;
+ background-color: #98d85b;
+ border-radius: 50%;
+ height: 8px;
+ width: 8px;
+}
+.red_cir{
+  margin-left: 1rem;
+ background-color: #df5858;
+ border-radius: 50%;
+ height: 8px;
+ width: 8px; 
+}
+.btn{
+  text-decoration: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+  outline: none;
+  
+  cursor: pointer;
+  border: none;
+  /* line-height:1.7; */
+  
+}
+.btn-p{
+  background-color: #2b33ff;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.btn-p:hover{
+  background-color: #686dfc;
+  color: #fff;
+}
+
+.form_das{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 5.9rem;
+}
+.form_das .left_form{
+  position: relative;
+  width: 15%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  padding-top: 0.8rem;
+ 
+  /* background-color: red; */
+
+}
+.form_das .left_form .data{
+  /* border: 1px solid yellow; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.form_das .left_form .data span{
+  border-radius: 50%;
+  background-color: #f0f4f7;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem;
+  color: rgb(7, 0, 0);
+  margin-right: 0.2rem;
+}
+.form_das .left_form .edit{
+  position: absolute;
+  bottom: 0rem;
+  left: 0;
+  /* margin-top: 5rem; */
+  font-size: 0.9rem;
+  padding: 0.8rem;
+  color: rgb(88, 85, 85);
+}
+.form_das .left_form .data a{
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+.form_das .left_form .data a:hover{
+  color: #6d6e70;
+}
+.form_das .right_form{
+  width:85%;
+  display: flex;
+  flex-direction: column;
+  border-left: 0.5px solid #ddd;
+  background-color: #fafbfc;
+}
+.form_das .right_form .check{
+  padding: 0.5rem;
+  width: 100%;
+  background-color: white;
+}
+.form_das .right_form .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 0.3rem 1rem;
+  
+}
+.form_das .right_form .row .set-1{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 1.5rem;
+}
+.form_das .right_form input,select,textarea{
+  font-size: 1.01rem;
+  border-radius: 5px;
+  border: 0.5px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  outline: none;
+}
+.succ
+{
+    display:none;
+    position: absolute;
+    top: 5rem;
+    right:1rem;
+    animation-name: succ;
+    animation-duration: 0.3s;
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate; */
+   
+}
+@keyframes succ {
+    from{
+        transform: rotate(-5deg);
+
+    }
+    to{
+        transform: rotate(2deg);
+    }
+}
+.succ p{
+    /* border: 0.5px solid #721c24; */
+    color: #155724;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0.3rem 1rem;
+    background-color: #d4edda;
+    border-radius: 10px;
+}
+.succ p span{
+    font-size: 1.2rem;
+    margin-left:1rem;
+    cursor: pointer;
+
+}
+.attach{
+  position: absolute;
+  background-color: white;
+  top: 0.1rem;
+  left: 40%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 3000;
+  width: 250px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: -1px 2px 5px rgb(53, 52, 52);
+}
+.attach form{
+  gap: 5px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.attach form input{
+  /* font-size: 1.01rem; */
+  border-radius: 5px;
+  border: 0.5px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  outline: none;
+  /* width: 80%; */
+}
+.btn-c{
+  background-color: #ff5858;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.btn-c:hover{
+  background-color: #f72e2e;
+  color: #fff;
+}
+.attach form .btn-set{
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  margin-left: -3rem;
+}
+/* manage account das end */
 
 
 
