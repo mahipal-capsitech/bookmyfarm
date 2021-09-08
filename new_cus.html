@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sortcut icon" href="image/logo.png">
+    <title>New Customer Create</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+
+    <!-- token filed -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css"> -->
+  <link rel="stylesheet" href="css/token.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+    <!-- token filed end -->
+    <script>
+        $(document).ready(function(){
+
+            $("#error_hide").click(function(){
+                $(".error").fadeOut();
+            })
+            $("#succ_hide").click(function(){
+                $(".succ").fadeOut();
+            })
+            $("#attach").click(function(){
+              $(".attach").css("display","flex");
+              $(".attach").slideDown();
+            })
+            $("#attach_hide").click(function(){
+              // $(".attach").css("display","none");
+              $(".attach").slideUp();
+            })
+            $('#skill').tokenfield({
+  autocomplete:{
+   source: ['COA','PSS','FUMIGATION','PHYTO','HALAL','KOSHER','C OF O','APTA','HOJ','HOM','GSP','MEMON','IMC','SAPTA','ISLFTA','INDO-THILAND','IMCECA','CEPA','DCEPA','ASEAN INDIA'],
+   delay:100
+  },
+  showAutocompleteOnFocus: true
+ });
+
+ let html='<tr><td ><input type="text" name="contact[]" style="width: 95%;"></td><td><input type="email" name="c_mail[]"  style="width: 95%;"></td><td><input type="text" name="c_mobi[]"  style="width: 95%;"></td><td style="margin-left:1rem;width:1%;"><a id="remove_row" class="btn btn-c" >Less</a></td></tr>';
+      let x=1;
+     $("#add_row").click(function(){
+        $("#table_filed").append(html);
+        x++;
+        
+  
+
+    
+     })
+     $("#table_filed").on('click','#remove_row',function(){
+        $(this).closest('tr').remove();
+
+
+     })
+            
+        })
+    </script>
+    <style>
+      @font-face {
+    font-family: "regular";
+    src: url(font/Poppins-Regular.ttf);
+}
+.nav .logo{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ padding-left: 0.8rem;
+ margin-left: 0.5rem;
+    text-decoration: none;
+    color: #525961;
+    transition: all 0.3s ease 0s;
+}
+.nav .logo a:hover{
+    color: #1d1f22;
+}
+.nav .logo a svg{
+    padding-right: 0.5rem;
+}
+.nav .textbox{
+    margin-left: -13rem;
+}
+
+.form_das .right_form{
+    width: 100%;
+}
+#skill-tokenfield{
+   border: 1px solid transparent;
+   outline: none;
+  
+}
+#skill-tokenfield:focus{
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+.token{
+margin: 0.3rem !important;
+background-color: rgb(175, 233, 175) !important;
+color:black !important;
+
+}
+a.close{
+    text-decoration: none !important;
+    color: black !important;
+}
+@media (max-width:1230px) {
+    #table_filed tr td input{
+        width: 80% !important;
+    }
+    #table_filed tr td input:nth-child(4){
+        width: 1% !important;
+    }
+    
+}
+@media (max-width:1080px) {
+  .textbox{
+    display: none;
+  }
+ 
+
+}
+
+label{
+  font-size: 1.1rem;
+}
+.error{
+  /* z-index: 10000; */
+  top:5rem;
+}
+
+
+
+/* media */
+@media (max-width:886px) {
+  .form_das .left_form{
+    display: none;
+  }
+  .form_das .right_form{
+    width: 100%;
+  }
+  
+}
+@media (max-width:712px) {
+  .form_das .right_form .row{
+    display: flex;
+    flex-direction: column;
+  }
+  .form_das .right_form .row .set-1{
+    width: 90%;
+  }
+  .form_das .right_form .row .texta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .form_das .right_form .row .texta label{
+   align-self:flex-start;
+   padding-left: 1.8rem;
+  }
+  .form_das .right_form .row .texta textarea{
+    width: 90%;
+  }
+  #set-width{
+      width: 90% !important;
+  }
+  #table_filed tr th a{
+        font-size: 0.7rem !important;
+  }
+
+  .nav .logo a{
+      /* padding: 0rem;
+      margin: 0; */
+      margin-left: 0.3rem;
+      padding-left: 0.5rem;
+    font-size: 0.8rem !important;
+}
+.nav .logo a svg{
+    width: 10px;
+    height: 10px;
+ padding: 0;
+ margin: 0;
+
+}
+.profile{
+    display: none !important;
+}
+.header{
+    margin-top: -0.6rem;
+}
+  
+  
+}
+
+@media (max-width:470px) {
+  .header .head_fst{
+  display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+.header .head_fst a{
+  font-size: 0.8rem;
+}
+.header span{
+  font-size: 0.7rem;
+  color: rgb(126, 121, 121);
+  padding-left: 0.5rem;
+}
+#table_filed tr td input{
+        width: 50% !important;
+    }
+    #table_filed tr td input:nth-child(4){
+        width: 1% !important;
+    }
+}
+@media (max-width:356px) {
+  .header .head_fst a{
+    display: none;
+  }
+  .error{
+    font-size: 0.8rem;
+  }
+  .error p{
+    padding: 0.3rem;
+  }
+  .succ{
+    font-size: 0.8rem;
+  }
+  .succ p{
+    padding: 0.3rem;
+  }
+}
+
+        
+    </style>
+</head>
+<body>
+
+  <div class="attach">
+    <form action="create_customer" method="POST" enctype="multipart/form-data">
+      <label for="">Attachment</label>
+      <input type="file" name="afile" required>
+      <div class="btn-set">
+        <input type="submit" name="attach" value="Attach" class="btn btn-p">
+        <input  type="button" class="btn btn-c" value="Exit" id="attach_hide">
+      </div>
+    </form>
+  </div>
+
+
+    <nav class="nav">
+    <div class="logo">
+        <a href="das.php"><img src="image/logo.png" alt=""></a>
+
+        <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Customer
+        </a>
+        <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> New Customer Create
+        </a>
+
+    </div>
+    <div class="textbox">
+        <form action="">
+            <input type="text" placeholder="Search or type a command (Alt + G)" accesskey="g">
+          
+              <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+        </form>
+    </div>
+    <div class="profile">
+        <a href="#">
+            <img src="upload/UI-face-3.jpg" alt="">
+            Mahipal        </a>
+        <div class="noty">
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+            </svg></a>
+            <span class="noty_num">2</span>
+            <div class="sub_item">
+              <a href="manage_account.php">Manage Account</a>
+              <a href="logout.php">Log-Out</a>
+            </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="head_fst">
+        <a> New Customer Create</a>
+     
+            <div class="red_cir"></div> <span>Not Saved</span>
+          </div>
+          <div class="head_sec">
+            <form action="manage_account.php" method="POST"   enctype="multipart/form-data">
+            <button type="submit" class="btn btn-p" name="add_cust" accesskey="s" style="margin-right: 2rem;">Save</button>
+          </div>
+    </div>
+
+</nav>
+<div class="form_das">
+  <!-- <div class="left_form">
+    <div class="data">
+      <a href="">Comment</a> 
+      <span class="cir_nor">1</span>
+    </div>
+    <div class="data">
+      <a href="">Help</a>
+    </div>
+    <div class="data">
+      <a href="" style="color: rgb(139, 138, 138);">Attachment</a>
+    </div>
+    <div class="data">
+      <a id="attach">Attach File +</a>
+    </div>
+        <div class="edit">
+     <a>
+       <br />
+<b>Warning</b>:  Undefined variable $resu in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>369</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>369</b><br />
+     </a>
+    </div>
+  </div> -->
+  <div class="right_form">
+   
+    <div class="row">
+        <div class="set-1">
+          <label for="">Customer ID</label>
+          <input type="text" name="fname">
+        </div>
+        <div class="set-1">
+          <label for="">Branch</label>
+          <select name="branch" id="">
+              <option value="Pali">Pali</option>
+              <option value="Mumbai">Mumbai</option>
+          </select>
+          
+        </div>
+    </div>
+    <div class="row">
+      <div class="set-1">
+        <label for="">Customer</label>
+        <input type="text" name="uname">
+      </div>
+      <div class="set-1">
+        <label for="">GSTIN</label>
+      <input type="text">
+      </div>
+  </div>
+  <div class="row">
+    <div class="set-1">
+      <label for="">Address Line 1</label>
+    <input type="text">
+      
+    </div>
+    <div class="set-1">
+        <label for="">Address Line 2</label>
+        <input type="text">
+    </div>
+</div>
+<div class="row">
+  <div class="set-1">
+    <label for="">City or Town</label>
+    <input type="text" name="pass">
+    
+  </div>
+  <div class="set-1">
+    <label for="">State</label>
+    <input type="text" name="cpass">
+  </div>
+</div>
+<div class="row">
+    <div class="set-1">
+      <label for="">Country</label>
+      <input type="text" name="pass">
+      
+    </div>
+    <div class="set-1">
+      <label for="">Pincode</label>
+      <input type="text" name="cpass">
+    </div>
+  </div>
+  <div class="row">
+    <div class="set-1">
+      <label for="">Destination Port</label>
+      <input type="text" name="pass">
+      
+    </div>
+    <div class="set-1">
+      <label for="">Shipping Mark in Image</label>
+      <input type="file" name="cpass">
+    </div>
+  </div>
+  <div class="row">
+    <div class="set-1" style="width: 100%;" id="set-width">
+        <label for="">Shipping Mark in Text</label>
+        <input type="text" name="cpass">
+    </div>
+  </div>
+  <div class="row">
+    <div class="set-1" style="width: 100%;" id="set-width">
+        <label for="">Required Documents</label>
+        <div class="skill" style="border: 1px solid #ddd;border-radius: 5px;width: 99%;" >
+        <input type="text" id="skill" name="doc"></div>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="set-1" style="width: 100%;" id="set-width">
+    <table style="width: 100%;border: 0.5px solid #ddd;border-radius: 5px;padding: 0.8rem;" id="table_filed">
+        <tr>
+        <th style="text-align: left;"><a for=""  style="font-weight: normal;">C.P. Name</a></th>
+        <th style="text-align: left;"> <a for=""  style="font-weight: normal;">Mail</a></th>
+       <th style="text-align: left;"> <a for=""  style="font-weight: normal;">Mobile No.</a></th>
+    </tr>
+    <tr>
+        <td ><input type="text" name="contact[]" style="width: 95%;"></td>
+        <td><input type="email" name="c_mail[]"  style="width: 95%;"></td>
+        <td><input type="text" name="c_mobi[]"  style="width: 95%;"></td>
+        <td style="margin-left:1rem;width:1%;"><a id="add_row" class="btn btn-p" >Add</a></td>
+    </tr>
+    </table>
+</div>
+   
+  </div>
+<div class="row">
+  <div class="set-1 texta" style="width: 100%;">
+    <label for="">Comment</label>
+    <textarea name="comment" id="" cols="5" rows="3" style="resize: none;"></textarea>
+    
+  </div>
+ 
+</div>
+<!-- <div class="row">
+  <div class="set-1" style="width: 100%;">
+    <a style="text-align:left;color: rgb(92, 90, 90);"><br />
+<b>Warning</b>:  Undefined variable $resu in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>484</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>484</b><br />
+</a>
+  </div>
+</div> -->
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/js.js"></script>
+</body>
+</html>
