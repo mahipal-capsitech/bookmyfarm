@@ -210,7 +210,7 @@ box-shadow: -1px 1px 2px black;
     display: none;
     position: absolute;
     top:2.8rem;
-    right:0.3rem;
+    right:1rem;
     /* display: flex; */
     flex-direction: column;
     animation-name: pt;
@@ -263,10 +263,11 @@ to{
     color: white;
     text-decoration: none;
     font-size: 1rem;
+    outline: none;
   }
   div.flex-1 .flex-row a .svg{
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 1.3rem 1.7rem;
     background-color:#218de0 ;
     margin-bottom: 0.3rem;
@@ -448,6 +449,15 @@ align-items: center;
   background-color: #686dfc;
   color: #fff;
 }
+.btn-m{
+  background-color: #f0f4f7;
+  color: #36414c;
+  transition: all 0.3s ease 0s;
+}
+.btn-m:hover{
+  background-color: #d1d2d3;
+  color: #11161b;
+}
 
 .form_das{
   width: 100%;
@@ -546,6 +556,7 @@ align-items: center;
 }
 .succ
 {
+  z-index: 1000;
     display:none;
     position: absolute;
     top: 5rem;

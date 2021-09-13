@@ -15,6 +15,18 @@
             $("#error_hide").click(function(){
                 $(".error").fadeOut();
             })
+            $("#succ_hide").click(function(){
+                $(".succ").fadeOut();
+            })
+            $("#attach").click(function(){
+              $(".attach").css("display","flex");
+              $(".attach").slideDown();
+            })
+            $("#attach_hide").click(function(){
+              // $(".attach").css("display","none");
+              $(".attach").slideUp();
+            })
+            
         })
     </script>
     <style>
@@ -22,159 +34,14 @@
     font-family: "regular";
     src: url(font/Poppins-Regular.ttf);
 }
+
+
 @media (max-width:735px) {
   .textbox{
     display: none;
   }
 }
-.header{
-  width: 100%;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-between;
-}
-.header .head_fst{
-  display: flex;
-flex-direction: row;
-align-items: center;
 
-}
-.header span{
-  font-size: 0.9rem;
-  color: rgb(126, 121, 121);
-  padding-left: 0.5rem;
-}
-.green_cir{
-  margin-left: 1rem;
- background-color: #98d85b;
- border-radius: 50%;
- height: 8px;
- width: 8px;
-}
-.red_cir{
-  margin-left: 1rem;
- background-color: #df5858;
- border-radius: 50%;
- height: 8px;
- width: 8px; 
-}
-.btn{
-  padding: 5px 10px;
-  font-size: 12px;
-  border-radius: 3px;
-  outline: none;
-  margin-right: 2rem;
-  cursor: pointer;
-  border: none;
-  line-height:1.7;
-  
-}
-.btn-p{
-  background-color: #2b33ff;
-  color: #fff;
-  transition: all 0.3s ease 0s;
-}
-.btn-p:hover{
-  background-color: #686dfc;
-  color: #fff;
-}
-
-.form_das{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-top: 5.9rem;
-}
-.form_das .left_form{
-  position: relative;
-  width: 15%;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 0.9rem;
-  padding-top: 0.8rem;
- 
-  /* background-color: red; */
-
-}
-.form_das .left_form .data{
-  /* border: 1px solid yellow; */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-}
-.form_das .left_form .data span{
-  border-radius: 50%;
-  background-color: #f0f4f7;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.3rem;
-  color: rgb(7, 0, 0);
-  margin-right: 0.2rem;
-}
-.form_das .left_form .edit{
-  position: absolute;
-  bottom: 0rem;
-  left: 0;
-  /* margin-top: 5rem; */
-  font-size: 0.9rem;
-  padding: 0.8rem;
-  color: rgb(88, 85, 85);
-}
-.form_das .left_form .data a{
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-  display: block;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-}
-.form_das .left_form .data a:hover{
-  color: #6d6e70;
-}
-.form_das .right_form{
-  width:85%;
-  display: flex;
-  flex-direction: column;
-  border-left: 0.5px solid #ddd;
-  background-color: #fafbfc;
-}
-.form_das .right_form .check{
-  padding: 0.5rem;
-  width: 100%;
-  background-color: white;
-}
-.form_das .right_form .row{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  /* border: 1px solid red; */
-  padding: 0.3rem 1rem;
-  
-}
-.form_das .right_form .row .set-1{
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  gap: 5px;
-  padding-right: 1.5rem;
-}
-.form_das .right_form input,select,textarea{
-  font-size: 1.01rem;
-  border-radius: 5px;
-  border: 0.5px solid #ddd;
-  padding: 0.4rem 0.6rem;
-  outline: none;
-}
 label{
   font-size: 1.1rem;
 }
@@ -182,6 +49,7 @@ label{
   /* z-index: 10000; */
   top:5rem;
 }
+
 
 
 /* media */
@@ -244,16 +112,34 @@ align-items: center;
   .error p{
     padding: 0.3rem;
   }
+  .succ{
+    font-size: 0.8rem;
+  }
+  .succ p{
+    padding: 0.3rem;
+  }
 }
-
 
         
     </style>
 </head>
 <body>
-<nav class="nav">
+
+  <div class="attach">
+    <form action="manage_account.php" method="POST" enctype="multipart/form-data">
+      <label for="">Attachment</label>
+      <input type="file" name="afile" required>
+      <div class="btn-set">
+        <input type="submit" name="attach" value="Attach" class="btn btn-p">
+        <input  type="button" class="btn btn-c" value="Exit" id="attach_hide">
+      </div>
+    </form>
+  </div>
+
+
+    <nav class="nav">
     <div class="logo">
-        <a href="das.php"><img src="image/logo.png" alt=""></a>
+        <a href="das.html"><img src="image/logo.png" alt=""></a>
     </div>
     <div class="textbox">
         <form action="">
@@ -268,7 +154,7 @@ align-items: center;
     </div>
     <div class="profile">
         <a href="#">
-            <img src="upload/1.jpg" alt="">
+            <img src="upload/feature-img1.jpg" alt="">
             Mahipal        </a>
         <div class="noty">
           <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
@@ -287,7 +173,7 @@ align-items: center;
                    <div class="green_cir"></div> <span>Active</span>          </div>
           <div class="head_sec">
             <form action="manage_account.php" method="POST"   enctype="multipart/form-data">
-            <button type="submit" class="btn btn-p" name="updatebtn" accesskey="s">Save</button>
+            <button type="submit" class="btn btn-p" name="updatebtn" accesskey="s" style="margin-right: 2rem;">Save</button>
           </div>
     </div>
 
@@ -296,7 +182,7 @@ align-items: center;
   <div class="left_form">
     <div class="data">
       <a href="">Comment</a> 
-      <span class="cir_nor">2</span>
+      <span class="cir_nor">1</span>
     </div>
     <div class="data">
       <a href="">Help</a>
@@ -305,14 +191,14 @@ align-items: center;
       <a href="" style="color: rgb(139, 138, 138);">Attachment</a>
     </div>
     <div class="data">
-      <a href="">Attach File +</a>
+      <a id="attach">Attach File +</a>
     </div>
         <div class="data">
-      <a href="attach/test.html" download style="font-size:0.8rem" title="attach/test.html">Attachment Download</a>
+      <a href="attach/production report march 2021 to 21 june 2021.pdf" download style="font-size:0.8rem" title="attach/production report march 2021 to 21 june 2021.pdf">Attachment Download</a>
     </div>
         <div class="edit">
      <a>
-       last Update By Mahipal 04-09-2021 17:09 pm     </a>
+       Last Edit By Mahipal 09-09-21 02:54 PM     </a>
     </div>
   </div>
   <div class="right_form">
@@ -337,16 +223,16 @@ align-items: center;
       </div>
       <div class="set-1">
         <label for="">DOB</label>
-      <input type="Date" value="1998-02-12" name="dob">
+      <input type="Date" value="1998-02-06" name="dob">
       </div>
   </div>
   <div class="row">
     <div class="set-1">
       <label for="">Gender</label>
+     
       <select name="gender" id="">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
+                <option value="Male" >Male</option>
+        <option value="Female" selected>Female</option>      </select>
       
     </div>
     <div class="set-1">
@@ -356,26 +242,26 @@ align-items: center;
 </div>
 <div class="row">
   <div class="set-1">
-    <label for="">Password</label>
+    <label for="">Old Password</label>
     <input type="password" name="pass">
     
   </div>
   <div class="set-1">
-    <label for="">Confirm Password</label>
+    <label for="">New Password</label>
     <input type="password" name="cpass">
   </div>
 </div>
 <div class="row">
   <div class="set-1 texta" style="width: 100%;">
     <label for="">Comment</label>
-    <textarea name="comment" id="" cols="5" rows="6" style="resize: none;">Smart Worker...</textarea>
+    <textarea name="comment" id="" cols="5" rows="6" style="resize: none;">Smart Worker.</textarea>
     
   </div>
  
 </div>
 <div class="row">
   <div class="set-1" style="width: 100%;">
-    <a style="text-align:left;color: rgb(92, 90, 90);">last Update By Mahipal 04-09-2021 17:09 pm</a>
+    <a style="text-align:left;color: rgb(92, 90, 90);">Last Edit By Mahipal 09-09-21 02:54 PM</a>
   </div>
 </div>
   </div>

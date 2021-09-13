@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="sortcut icon" href="image/logo.png">
+    <title>Customer_List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+
+    <!-- token filed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css"> -->
+  <link rel="stylesheet" href="css/token.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
+    <!-- token filed end -->
+
+    
+    <script>
+        $(document).ready(function(){
+
+            $('#skill').tokenfield({
+  autocomplete:{
+   source: ['COA','PSS','FUMIGATION','PHYTO','HALAL','KOSHER','C OF O','APTA','HOJ','HOM','GSP','MEMON','IMC','SAPTA','ISLFTA','INDO-THILAND','IMCECA','CEPA','DCEPA','ASEAN INDIA'],
+   delay:100
+  },
+  showAutocompleteOnFocus: true
+ });
+
+            $("#error_hide").click(function(){
+                $(".error").fadeOut();
+            })
+            $("#succ_hide").click(function(){
+                $(".succ").fadeOut();
+            })
+            $("#attach").click(function(){
+              $(".attach").css("display","flex");
+              $(".attach").slideDown();
+            })
+            $("#attach_hide").click(function(){
+              // $(".attach").css("display","none");
+              $(".attach").slideUp();
+            })
+          
+
+ let html='<tr><td ><input type="text" name="contact[]" style="width: 93%;"></td><td><input type="email" name="c_mail[]"  style="width: 93%;"></td><td><input type="text" name="c_mobi[]"  style="width: 93%;"></td><td style="margin-left:1rem;width:1%;"><a id="remove_row" class="btn btn-c" >Less</a></td></tr>';
+      let x=1;
+     $("#add_row").click(function(){
+        $("#table_filed").append(html);
+        x++;  
+     })
+     $("#table_filed").on('click','#remove_row',function(){
+        $(this).closest('tr').remove();
+     })
+        })
+    </script>
+    <style>
+      @font-face {
+    font-family: "regular";
+    src: url(font/Poppins-Regular.ttf);
+}
+.nav .logo{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ padding-left: 0.8rem;
+ margin-left: 0.5rem;
+    text-decoration: none;
+    color: #525961;
+    transition: all 0.3s ease 0s;
+}
+.nav .logo a:hover{
+    color: #1d1f22;
+}
+.nav .logo a svg{
+    padding-right: 0.5rem;
+}
+.nav .textbox{
+    margin-left: -13rem;
+}
+
+.form_das .right_form{
+    width: 85%;
+    padding-top: 1rem;
+}
+#skill-tokenfield{
+   border: 1px solid transparent;
+   outline: none;
+  
+}
+#skill-tokenfield:focus{
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+.token{
+margin: 0.3rem !important;
+background-color: rgb(175, 233, 175) !important;
+color:black !important;
+
+}
+a.close{
+    text-decoration: none !important;
+    color: black !important;
+}
+.save_btn_loc{
+    position: fixed;
+    top: 3.5rem;
+    right: 1rem;
+    z-index: 10000;
+}
+.header{
+    z-index: 1000;
+  margin-top: 0rem !important;
+  /* border: 1px solid red; */
+}
+.form_das .left_form .ship_img{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width:100%; 
+   
+}
+.form_das .left_form .ship_img a img{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: -1px 1px 5px #ddd;
+}
+.header .head_sec{
+    position: relative;
+}
+.header .head_sec .sub_menu_data{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    z-index: 10000;
+    border-bottom: 0.5px solid #ddd;
+    background-color: transparent;
+    padding-top:0.2rem ;
+    
+}
+.header .head_sec .sub_menu_data a{
+    border-left: 0.5px solid #ddd;
+    border-right: 0.5px solid #ddd;
+    border-top: 0.5px solid #ddd;
+    text-decoration: none;
+    color: #1d1f22;
+    display: block;
+    background-color: #f0f4f7;
+    padding:0.5rem 0.8rem;
+    transition: all 0.3s ease 0;
+}
+.header .head_sec .btn-m:hover .sub_menu_data{
+display: flex;
+}
+.header .head_sec .sub_menu_data a:hover{
+    background-color:#d1d3d4;
+}
+
+
+/* table */
+.form_das .right_form .table_view{
+    width: 100%;
+    position: relative;
+    /* border:1px solid red; */
+}
+.form_das .right_form .table_view table{
+  width: 100%;
+  /* border:1px solid #ddd; */
+  border-collapse: collapse;
+}
+.form_das .right_form .table_view table th{
+  color: #7574ff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0rem;
+}
+.form_das .right_form .table_view table th,td{
+  /* border:1px solid #ddd; */
+  text-align: left;
+}
+.form_das .right_form .table_view table td{
+  border-bottom: 1px solid #ddd;
+  padding: 0.3rem 0rem;
+}
+.form_das .right_form .table_view table td a{
+  display: block;
+  text-decoration: none;
+  color: #1d1f22;
+}
+/* side number */
+.form_das .right_form .side_number{
+position: relative;
+width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+/* border: 0.5px solid #dfdede; */
+padding: 0.5rem 0.3rem;
+
+}
+.form_das .right_form .side_number .left a{
+  border-radius: 4px;
+}
+.form_das .right_form .side_number .right{
+  display: flex;
+  border: 0.5px solid #dfdfdf;
+  margin-right: 1rem;
+}
+.form_das .right_form .side_number a{
+  text-decoration: none;
+  display: block;
+  padding: 0.3rem;
+  background-color: #f0f4f7;
+  color: #1d1f22;
+  font-size: 0.8rem;
+  border-left: 0.5px solid #dfdfdf;
+  transition: all 0.3s ease 0s;
+}
+.form_das .right_form  .side_number a:hover{
+  background-color: #e6e7e7;
+}
+.form_das .right_form  .side_number a:nth-child(1){
+  border-left: none;
+}
+#mob_table
+{
+  display:none;
+}
+@media (max-width:1230px) {
+  
+    
+    
+}
+@media (max-width:1080px) {
+  .textbox{
+    display: none;
+  }
+ .header{
+   margin-top: 0 !important;
+ }
+ .form_das .right_form table{
+   font-size: 0.8rem;
+ }
+
+}
+
+label{
+  font-size: 1.1rem;
+}
+.error{
+  /* z-index: 10000; */
+  top:5rem;
+}
+
+
+
+/* media */
+@media (max-width:886px) {
+  .form_das .left_form{
+    display: none;
+  }
+  .form_das .right_form{
+    width: 100%;
+  }
+  .header{
+   margin-top: 0 !important;
+ }
+  
+}
+@media (max-width:712px) {
+ 
+  .nav .logo a{
+      /* padding: 0rem;
+      margin: 0; */
+      margin-left: 0.3rem;
+      padding-left: 0.5rem;
+    font-size: 0.8rem !important;
+}
+.nav .logo a svg{
+    width: 10px;
+    height: 10px;
+ padding: 0;
+ margin: 0;
+
+}
+.profile{
+    display: none !important;
+}
+.header{
+    margin-top: -0.8rem !important;
+}
+#des_table{
+  display:none;
+}
+#mob_table
+{
+  display:flex;
+  width: 100%;
+  /* border: 1px solid red; */
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+#mob_table th{
+padding-left: 0.5rem;
+}
+#mob_table td{
+  padding-left: 0.5rem;
+}
+#mob_table th,td{
+  width:1000px;
+}
+#mob_table .mob_table_row{
+  display: flex;
+  flex-direction: column;
+}
+#mob_table .mob_table_row .other{
+  font-size: 0.8rem;
+  color: #afb0b1;
+}
+/* .form_das .right_form table{
+   font-size: 0.6rem;
+ } */
+  
+  
+}
+@media (max-width:590px) {
+    #printer{
+        display: none;
+    }
+}
+
+@media (max-width:470px) {
+  .header .head_fst{
+  display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+.header .head_fst a{
+  font-size: 0.8rem;
+}
+.header span{
+  font-size: 0.7rem;
+  color: rgb(126, 121, 121);
+  padding-left: 0.5rem;
+}
+#table_filed tr td input{
+        width: 50% !important;
+    }
+    #table_filed tr td input:nth-child(4){
+        width: 1% !important;
+    }
+    .header{
+    margin-top: -0.6rem !important;
+}
+.error{
+    font-size: 0.8rem;
+  }
+  .error p{
+    padding: 0.3rem;
+  }
+  .succ{
+    font-size: 0.8rem;
+  }
+  .succ p{
+    padding: 0.3rem;
+  }
+}
+@media (max-width:356px) {
+  /* .header .head_fst a{
+    display: none;
+  } */
+  .error{
+    font-size: 0.8rem;
+  }
+  .error p{
+    padding: 0.3rem;
+  }
+  .succ{
+    font-size: 0.8rem;
+  }
+  .succ p{
+    padding: 0.3rem;
+  }
+}
+
+        
+    </style>
+</head>
+<body>
+
+  <div class="attach">
+    <form action="customer_view.php" method="POST" enctype="multipart/form-data">
+      <label for="">Attachment</label>
+      <input type="file" name="afile" required>
+      <div class="btn-set">
+        <input type="submit" name="attach" value="Attach" class="btn btn-p">
+        <input  type="button" class="btn btn-c" value="Exit" id="attach_hide">
+      </div>
+    </form>
+  </div>
+
+
+    <nav class="nav">
+    <div class="logo">
+        <a href="das.php"><img src="image/logo.png" alt=""></a>
+
+        <a href="sales_das.php">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Sales
+        </a>
+        <!-- <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> New Customer Create
+        </a> -->
+
+    </div>
+    <div class="textbox">
+        <form action="">
+            <input type="text" placeholder="Search or type a command (Alt + G)" accesskey="g">
+          
+              <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+        </form>
+    </div>
+    <div class="profile">
+        <a href="#">
+            <img src="upload/feature-img1.jpg" alt="">
+            Mahipal        </a>
+        <div class="noty">
+          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+            </svg></a>
+            <span class="noty_num">2</span>
+            <div class="sub_item">
+              <a href="manage_account.php">Manage Account</a>
+              <a href="logout.php">Log-Out</a>
+            </div>
+      </div>
+    </div>
+   
+
+</nav>
+<form action="customer_view.php" method="POST" enctype="multipart/form-data">
+<div class="header">
+  <div class="head_fst">
+    <a>Customer List</a>
+ 
+        <!-- <div class="green_cir"></div> <span>Saved</span> -->
+      </div>
+      <div class="head_sec">
+            <!-- <span style="position:relative;top:0.2rem;right:0.5rem;">
+          
+            <a href="customer_print.php" target="_blank" id="printer"><svg  width="16" height="16" fill="rgb(121, 120, 120)" >
+                <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+              </svg></a>
+            </span> -->
+
+          
+          <!-- <a style="font-size: 0.9rem;color: rgb(121, 120, 120);margin-right: 0.8rem;"  id="printer"><br />
+<b>Warning</b>:  Undefined variable $resu in <b>C:\xampp\htdocs\erp\cust_das.php</b> on line <b>508</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\erp\cust_das.php</b> on line <b>508</b><br />
+</a> -->
+         
+            <!-- <button type="button" class="btn btn-m" name="add_cust" accesskey="m" style="margin-right:0rem;"  id="printer">Menu
+                <div class="sub_menu_data">
+                    <a href="customer_print.php" target="_blank">Print</a>
+                    <a href="customer_view.php">Reload</a>
+                    <a href="#">Delete</a>
+                    <a href="create_customer.php" >New Customer Create</a>
+                </div>
+            </button> -->
+            <a href="cust_das.php"><button type="button" class="btn btn-m">Refresh</button></a>
+           
+    
+     <a href="new_cus.html"> <button type="button" class="btn btn-p" accesskey="n" style="margin-right:2rem;">New</button></a>
+      </div>
+     
+</div>
+
+    <div class="save_btn_loc">
+    </div>
+<div class="form_das">
+   
+    
+ <div class="left_form">
+    <div class="data">
+      <a href="">Report</a> 
+      <!-- <span class="cir_nor">1</span> -->
+    </div>
+    <div class="data">
+      <a href="">Help</a>
+    </div>
+  </div> 
+  <div class="right_form" style="background-color: white;padding-top: 0;margin-top: 0;">
+    <div class="check">
+        <a href=""><button class="btn btn-m"> Add Filter</button></a>
+      </div>
+      <div class="table_view">
+          <table id="des_table">
+              <tr>
+                  <th><input type="checkbox"></th>
+                  <th>Full Name</th>
+                  <th>Destination Port</th>
+                  <th>Country</th>
+                  <th>Customer ID</th>
+                  <th>Last Edit By</th>
+              </tr>
+                            <tr>
+                  <td><input type="checkbox"></td>
+                  <td><a href="demo.html">BIO SOLS PVT LTD</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">Kolkata</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">India</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">SBPL-CUST-54</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">Last Edit By Mahipal 13-09-21 11:51 AM</a></td>
+              </tr>
+                            <tr>
+                  <td><input type="checkbox"></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">SARDA GUM PVT LTD</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">Mumbai</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">India</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">SBPL-CUST-1</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">Last Edit By Mahipal 13-09-21 11:43 AM</a></td>
+              </tr>
+                        </table>
+
+          <!-- secon mob table -->
+          <table id="mob_table">
+              <tr>
+                  <!-- <th><input type="checkbox"></th> -->
+                  <th>Full Name</th>
+                  <!-- <th>Destination Port</th>
+                  <th>Country</th>
+                  <th>Customer ID</th> -->
+                  <!-- <th>Last Edit By</th> -->
+              </tr>
+                            <tr>
+                  <!-- <td><input type="checkbox"></td> -->
+                  <td><a href="customer_view.php?send=SBPL-CUST-54" class="mob_table_row">
+                    <span >BIO SOLS PVT LTD</span>
+                   <span class="other"> SBPL-CUST-54</span>
+                   <span class="other"> Last Edit By Mahipal 13-09-21 11:51 AM</span>
+                  </a></td>
+                  <!-- <td><a href="customer_view.php?send=SBPL-CUST-54">Kolkata</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">India</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-54">SBPL-CUST-54</a></td> -->
+                  <!-- <td><a href="customer_view.php?send=SBPL-CUST-54">Last Edit By Mahipal 13-09-21 11:51 AM</a></td> -->
+              </tr>
+                            <tr>
+                  <!-- <td><input type="checkbox"></td> -->
+                  <td><a href="customer_view.php?send=SBPL-CUST-1" class="mob_table_row">
+                    <span >SARDA GUM PVT LTD</span>
+                   <span class="other"> SBPL-CUST-1</span>
+                   <span class="other"> Last Edit By Mahipal 13-09-21 11:43 AM</span>
+                  </a></td>
+                  <!-- <td><a href="customer_view.php?send=SBPL-CUST-1">Mumbai</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">India</a></td>
+                  <td><a href="customer_view.php?send=SBPL-CUST-1">SBPL-CUST-1</a></td> -->
+                  <!-- <td><a href="customer_view.php?send=SBPL-CUST-1">Last Edit By Mahipal 13-09-21 11:43 AM</a></td> -->
+              </tr>
+                        </table>
+         
+      </div>
+      <div class="side_number">
+        <div class="left">
+          <a href="cust_das.php?limit=50">More..</a>
+        </div>
+        <div class="right">
+        <a href="cust_das.php?limit=50">50</a>
+        <a href="cust_das.php?limit=100">100</a>
+        <a href="cust_das.php?limit=500">500</a>
+      </div>
+</div>
+  </div>
+</div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/js.js"></script>
+</body>
+</html>

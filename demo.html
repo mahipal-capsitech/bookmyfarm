@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="sortcut icon" href="image/logo.png">
-    <title>New Customer Create</title>
+    <title>BIO SOLS PVT LTD</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.js"></script>
 
@@ -49,7 +49,7 @@
             })
           
 
- let html='<tr><td ><input type="text" name="contact[]" style="width: 95%;"></td><td><input type="email" name="c_mail[]"  style="width: 95%;"></td><td><input type="text" name="c_mobi[]"  style="width: 95%;"></td><td style="margin-left:1rem;width:1%;"><a id="remove_row" class="btn btn-c" >Less</a></td></tr>';
+ let html='<tr><td ><input type="text" name="contact[]" style="width: 93%;"></td><td><input type="email" name="c_mail[]"  style="width: 93%;"></td><td><input type="text" name="c_mobi[]"  style="width: 93%;"></td><td style="margin-left:1rem;width:1%;"><a id="remove_row" class="btn btn-c" >Less</a></td></tr>';
       let x=1;
      $("#add_row").click(function(){
         $("#table_filed").append(html);
@@ -99,7 +99,7 @@
 }
 
 .form_das .right_form{
-    width: 100%;
+    width: 85%;
     padding-top: 1rem;
 }
 #skill-tokenfield{
@@ -129,24 +129,62 @@ a.close{
     z-index: 10000;
 }
 .header{
+    z-index: 1000;
   margin-top: 0rem !important;
-  z-index: 1000;
   /* border: 1px solid red; */
 }
-.btn-like{
-    font-size: 0.7rem;
-    text-decoration: none;
-    padding: 0.2rem 0.5rem;
-    background-color: rgb(235, 232, 232);
-    border:0.5px solid #ddd;
+.form_das .left_form .ship_img{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width:100%; 
+   
+}
+.form_das .left_form .ship_img a img{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    cursor: pointer;
-    margin-left: 0.5rem;
+    box-shadow: -1px 1px 5px #ddd;
+}
+.header .head_sec{
+    position: relative;
+}
+.header .head_sec .sub_menu_data{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    z-index: 10000;
+    border-bottom: 0.5px solid #ddd;
+    background-color: transparent;
+    padding-top:0.2rem ;
+    
+}
+.header .head_sec .sub_menu_data a{
+    border-left: 0.5px solid #ddd;
+    border-right: 0.5px solid #ddd;
+    border-top: 0.5px solid #ddd;
+    text-decoration: none;
+    color: #1d1f22;
+    display: block;
+    background-color: #f0f4f7;
+    padding:0.5rem 0.8rem;
     transition: all 0.3s ease 0;
 }
-.btn-like:hover{
-    background-color:rgb(209, 207, 207);
+.header .head_sec .btn-m:hover .sub_menu_data{
+display: flex;
 }
+.header .head_sec .sub_menu_data a:hover{
+    background-color:#d1d3d4;
+}
+/* .form_das .right_form{
+  height: 100vh;
+  overflow:hidden;
+  overflow-y: scroll;
+} */
 @media (max-width:1230px) {
     #table_filed tr td input{
         width: 80% !important;
@@ -236,10 +274,15 @@ label{
     display: none !important;
 }
 .header{
-    margin-top: -0.5rem !important;
+    margin-top: -0.8rem !important;
 }
   
   
+}
+@media (max-width:590px) {
+    #printer{
+        display: none;
+    }
 }
 
 @media (max-width:470px) {
@@ -302,8 +345,8 @@ align-items: center;
 </head>
 <body>
 
-  <!-- <div class="attach">
-    <form action="create_customer.php" method="POST" enctype="multipart/form-data">
+  <div class="attach">
+    <form action="customer_view.php" method="POST" enctype="multipart/form-data">
       <label for="">Attachment</label>
       <input type="file" name="afile" required>
       <div class="btn-set">
@@ -311,7 +354,7 @@ align-items: center;
         <input  type="button" class="btn btn-c" value="Exit" id="attach_hide">
       </div>
     </form>
-  </div> -->
+  </div>
 
 
     <nav class="nav">
@@ -323,11 +366,11 @@ align-items: center;
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                   </svg> Customer
         </a>
-        <a href="create_customer.php">
+        <!-- <a href="#">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                   </svg> New Customer Create
-        </a>
+        </a> -->
 
     </div>
     <div class="textbox">
@@ -359,14 +402,35 @@ align-items: center;
    
 
 </nav>
-<form action="create_customer.php" method="POST" enctype="multipart/form-data">
+<form action="customer_view.php" method="POST" enctype="multipart/form-data">
 <div class="header">
   <div class="head_fst">
-    <a> New Customer Create</a>
+    <a>BIO SOLS PVT LTD</a>
  
-        <div class="red_cir"></div> <span>Not Saved</span>
+        <div class="green_cir"></div> <span>Saved</span>
       </div>
       <div class="head_sec">
+            <span style="position:relative;top:0.2rem;right:0.5rem;">
+            <!-- ptinter -->
+           <a href="customer_print.php" target="_blank" id="printer"><svg  width="16" height="16" fill="rgb(121, 120, 120)" >
+                <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+              </svg></a>
+            </span>
+
+          
+          <a style="font-size: 0.9rem;color: rgb(121, 120, 120);margin-right: 0.8rem;"  id="printer">SBPL-CUST-54</a>
+       
+            <button type="button" class="btn btn-m" name="add_cust" accesskey="m" style="margin-right:0rem;"  id="printer">Menu
+                <div class="sub_menu_data">
+                    <a href="customer_print.php" target="_blank">Print</a>
+                                        <a href="create_customer.php?bra=Pali&customer_name=BIO SOLS PVT LTD&gst=22AAACR6149L1ZA&address_1=Ploat No 112, Bagdiya Road&address_2=Near Old Bus Stand&city=Pali&state=Rajathan&country=India&pincode=306401&destination=Kolkata&shipping_mark_text=GUARSAR-501, Gross Weight:25.210 Kg, Net Weight:25.000 Kg, Country Of Origin:INDIA, Producton Date:08/2021, Validity:24 Months, Comosition:100% Guar, Gum(E412), GMO FREE, Lot No. 20/195-21,20/196-21, (RUSSIA MARKS)&req_doc=FUMIGATION, APTA&comment=ok&con_name=SARDA GUM PVT LTD&con_tax_id=22AAACR6149L1ZA&con_add_1=Ploat No 112, Bagdiya Road&con_add_2=Near Old Bus Stand&con_city=Pali&con_state=Rajathan&con_c=India&con_pin=306401&b_name=BIO SOLS PVT LTD&b_id=22AAACR6149L1ZA&b_add_1=H 105 To 109, Bajarang Road&b_add_2=Near Maharana Partap Circle&b_city=Pali&b_state=Rajathan&b_c=India&b_pin=306401&n_name=SARDA GUM PVT LTD&n_id=22AAACR6149L1ZA&n_add_1=H 105 To 109, Bajarang Road&n_add_2=Near Maharana Partap Circle&n_city=Pali&n_state=Rajathan&n_c=India&n_pin=306401">Dublicate</a>
+                    <a href="customer_view.php">Reload</a>
+                    <a href="#">Delete</a>
+                    <a href="create_customer.php" >New Customer</a>
+                </div>
+            </button>
+    
       <button type="submit" class="btn btn-p" name="add_cust" accesskey="s" style="margin-right:2rem;">Save</button>
       </div>
      
@@ -377,11 +441,10 @@ align-items: center;
 <div class="form_das">
    
     
-  <!-- <div class="left_form">
+ <div class="left_form">
     <div class="data">
       <a href="">Comment</a> 
-      <span class="cir_nor">1</span>
-    </div>
+              <span class="cir_nor">1</span>    </div>
     <div class="data">
       <a href="">Help</a>
     </div>
@@ -391,31 +454,42 @@ align-items: center;
     <div class="data">
       <a id="attach">Attach File +</a>
     </div>
-        <div class="edit">
-     <a>
-       <br />
-<b>Warning</b>:  Undefined variable $resu in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>717</b><br />
-<br />
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>717</b><br />
-     </a>
+   
+            <div class="data">
+      <a href="" download style="display:none" title="">Attachment Download</a>
     </div>
-  </div> -->
+                <div class="data ship_img">
+            <a>Shipping Mark Image</a>
+            <a href="shipping/ack.png" download title="shipping/ack.png">
+            <img src="shipping/ack.png" alt="Shipping Image">
+        </div>
+                    </a>
+
+       
+    <div class="edit">
+     <a>
+       Last Edit By Mahipal 13-09-21 11:51 AM     </a>
+    </div>
+  </div> 
   <div class="right_form">
     
     <div class="row">
         <div class="set-1">
           <label for="">Customer ID</label>
         
-          <input type="text" name="cust_id" value="SBPL-CUST-55" disabled>
+          <input type="text" name="cust_id" value="SBPL-CUST-54" disabled>
         </div>
         <div class="set-1">
           <label for="">Branch</label>
        
-                        <select name="branch">
-                <option value="Pali" selected>Pali</option>
-                <option value="Mumbai" >Mumbai</option>
-            </select>
-                           
+                     <select name="branch">
+             <option value="Pali" selected>Pali</option>
+             <option value="Mumbai">Mumbai</option>
+         </select>
+         
+
+           
+               
         
           
         </div>
@@ -424,49 +498,52 @@ align-items: center;
       <div class="set-1">
         <label for="">Customer</label>
         <!-- customer  -->
-                            <input type="text" name="customer_name" value="" style="border:0.5px solid red;" id="cust_name">
-                  </div>
+        <input type="text" name="customer_name" value="BIO SOLS PVT LTD">
+      </div>
       <div class="set-1">
         <label for="">GSTIN</label>
-                <input type="text" name="gst" value="" id="gst">      </div>
+      <input type="text" name="gst" value="22AAACR6149L1ZA">
+      
+      </div>
   </div>
   <div class="row">
     <div class="set-1">
       <label for="">Address Line 1</label>
-                              <input type="text" name="address_1" value="" style="border:0.5px solid red;" id="cust_add_1">                  
+      <input type="text" name="address_1" value="Ploat No 112, Bagdiya Road">                  
       
     </div>
     <div class="set-1">
         <label for="">Address Line 2</label>
-                    <input type="text" name="address_2" value=""  id="cust_add_2">    </div>
+        <input type="text" name="address_2" value="Near Old Bus Stand">
+    </div>
 </div>
 <div class="row">
   <div class="set-1">
     <label for="">City or Town</label>
-                    <input type="text" name="city" value="" style="border:0.5px solid red;" id="cust_city">    
+    <input type="text" name="city" value="Pali">
+    
   </div>
   <div class="set-1">
     <label for="">State</label>
-                            <input type="text" name="state" value="" style="border:0.5px solid red;" id="cust_state">
-                          </div>
+    <input type="text" name="state" value="Rajathan">
+  </div>
 </div>
 <div class="row">
     <div class="set-1">
       <label for="">Country</label>
-                  <input type="text" name="country" value="" style="border:0.5px solid red;" id="cust_country">
-               
+      <input type="text" name="country" value="India">  
       
     </div>
     <div class="set-1">
       <label for="">Pincode</label>
-              <input type="text" name="pincode" value=""  id="cust_pin">
-            </div>
+      <input type="text" name="pincode" value="306401">
+    </div>
   </div>
   <div class="row">
     <div class="set-1">
       <label for="">Destination Port</label>
-              <input type="text" name="destination" value="">
-              
+      <input type="text" name="destination" value="Kolkata">
+      
     </div>
     <div class="set-1">
       <label for="">Shipping Mark in Image</label>
@@ -476,205 +553,258 @@ align-items: center;
   <div class="row">
     <div class="set-1" style="width: 100%;" id="set-width">
         <label for="">Shipping Mark in Text</label>
-                    <input type="text" name="shipping_mark_text" value="">
-                </div>
+        <input type="text" name="shipping_mark_text" value="GUARSAR-501, Gross Weight:25.210 Kg, Net Weight:25.000 Kg, Country Of Origin:INDIA, Producton Date:08/2021, Validity:24 Months, Comosition:100% Guar, Gum(E412), GMO FREE, Lot No. 20/195-21,20/196-21, (RUSSIA MARKS)" style="font-size: 0.8rem" title="GUARSAR-501, Gross Weight:25.210 Kg, Net Weight:25.000 Kg, Country Of Origin:INDIA, Producton Date:08/2021, Validity:24 Months, Comosition:100% Guar, Gum(E412), GMO FREE, Lot No. 20/195-21,20/196-21, (RUSSIA MARKS)">
+    </div>
   </div>
 
   <div class="row">
     <div class="set-1" style="width: 100%;" id="set-width">
         <label for="">Required Documents</label>
         <div style="border: 1px solid #ddd;border-radius: 5px;width: 99%;">
-                    <input type="text" name="req_doc" id="skill">
-                    
+        <input type="text" name="req_doc" id="skill" value="FUMIGATION, APTA"/>
+        
     </div>
     </div>
   </div>
-
-    
-
-  <!-- consignee start -->
-  <div class="consi" style="border: 0.5px solid rgb(197, 197, 197);border-radius: 5px; padding:0.3rem 0.3rem;margin: 1rem 0.9rem 0 1rem;position: relative;">
-    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Consignee Details <a onclick="cons()" class="btn-like">Upstairs</a></a></div>
+   <!-- consignee start -->
+   <div class="consi" style="border: 0.5px solid rgb(197, 197, 197);border-radius: 5px; padding:0.3rem 0.3rem;margin: 1rem 0.9rem 0 1rem;position: relative;">
+    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Consignee Details</a></div>
     <div class="row" style="padding-top: 1rem;">
          <div class="set-1">
            <label for="">Consignee Name</label>
            <!-- customer  -->
-                           <input type="text" name="con_name" value="" id="con_name">
-                
-              
-          
+            <input type="text" name="con_name" value="SARDA GUM PVT LTD">
          </div>
          <div class="set-1">
            <label for="">Consignee Tax ID</label>
-                      <input type="text" name="con_tax_id" value="" id="con_gst">         </div>
+          
+         <input type="text" name="con_tax_id" value="22AAACR6149L1ZA">
+         
+         </div>
      </div>
    <div class="row">
        <div class="set-1">
          <label for="">Address Line 1</label>
-                         <input type="text" name="con_add_1" value="" id="con_add_1">                                  
+         
+            <input type="text" name="con_add_1" value="Ploat No 112, Bagdiya Road">
+           
          
        </div>
        <div class="set-1">
            <label for="">Address Line 2</label>
-                          <input type="text" name="con_add_2" value="" id="con_add_2">       </div>
+          
+           <input type="text" name="con_add_2" value="Near Old Bus Stand">
+               
+       </div>
    </div>
    <div class="row">
      <div class="set-1">
        <label for="">City or Town</label>
-                   <input type="text" name="con_city" value="" id="con_cty">          
+    
+        <input type="text" name="con_city" value="Pali">
+     
      </div>
      <div class="set-1">
        <label for="">State</label>
-                   <input type="text" name="con_state" value="" id="con_state">          
+     
+        <input type="text" name="con_state" value="Rajathan">
+      
+          
      </div>
    </div>
    <div class="row">
        <div class="set-1">
          <label for="">Country</label>
-                         <input type="text" name="con_c" value="" id="con_country">          
+       
+            <input type="text" name="con_c" value="India">
+            
+          
          
        </div>
        <div class="set-1">
          <label for="">Pincode</label>
-                    <input type="text" name="con_pin" value="" id="con_pin"> 
-                  </div>
+         
+         <input type="text" name="con_pin" value="306401">
+         
+       </div>
      </div>
       </div>
   <!-- consignee end -->
 
   <!-- buyer start -->
   <div class="consi" style="border: 0.5px solid rgb(197, 197, 197);border-radius: 5px; padding:0.3rem 0.3rem;margin: 1rem 0.9rem 0 1rem;position: relative;">
-    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Buyer's Details<a onclick="buy()" class="btn-like">Upstairs</a></a></div>
+    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Buyer's Details</a></div>
     <div class="row" style="padding-top: 1rem;">
          <div class="set-1">
            <label for="">Buyer's Name</label>
            <!-- customer  -->
-                           <input type="text" name="b_name" value="" id="b_name">
-                
+         
+            <input type="text" name="b_name" value="BIO SOLS PVT LTD">
+        
+
               
           
          </div>
          <div class="set-1">
            <label for="">Buyer's Tax ID</label>
-                      <input type="text" name="b_id" value="" id="b_gst">         </div>
+           
+         <input type="text" name="b_id" value="22AAACR6149L1ZA">
+           
+         </div>
      </div>
    <div class="row">
        <div class="set-1">
          <label for="">Address Line 1</label>
-                         <input type="text" name="b_add_1" value="" id="b_add_1">                                  
+        
+            <input type="text" name="b_add_1" value="H 105 To 109, Bajarang Road">
+            
+                                  
          
        </div>
        <div class="set-1">
            <label for="">Address Line 2</label>
-                          <input type="text" name="b_add_2" value="" id="b_add_2">       </div>
+          
+           <input type="text" name="b_add_2" value="Near Maharana Partap Circle">
+         
+       </div>
    </div>
    <div class="row">
      <div class="set-1">
        <label for="">City or Town</label>
-                   <input type="text" name="b_city" value="" id="b_city">          
+     
+        <input type="text" name="b_city" value="Pali">
+      
      </div>
      <div class="set-1">
        <label for="">State</label>
-                   <input type="text" name="b_state" value="" id="b_state">          
+    
+        <input type="text" name="b_state" value="Rajathan">
+    
+          
      </div>
    </div>
    <div class="row">
        <div class="set-1">
          <label for="">Country</label>
-                         <input type="text" name="b_c" value="" id="b_country">          
+       
+            <input type="text" name="b_c" value="India">
+         
+          
          
        </div>
        <div class="set-1">
          <label for="">Pincode</label>
-                    <input type="text" name="b_pin" value="" id="b_pin">
-                  </div>
+      
+         <input type="text" name="b_pin" value="306401">
+      
+       </div>
      </div>
       </div>
   <!-- buyer end -->
 
   <!-- noty start -->
   <div class="consi" style="border: 0.5px solid rgb(197, 197, 197);border-radius: 5px; padding:0.3rem 0.3rem;margin: 1rem 0.9rem 0 1rem;position: relative;">
-    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Notify Party Details<a onclick="not()" class="btn-like">Upstairs</a></a></div>
+    <div style="position: absolute;top: -0.8rem; left: 1rem;background-color: #fafbfc;"><a>Notify Party Details</a></div>
     <div class="row" style="padding-top: 1rem;">
          <div class="set-1">
            <label for="">Notify Party Name</label>
            <!-- customer  -->
-                           <input type="text" name="n_name" value="" id="n_name">
-                
-              
+          
+            <input type="text" name="n_name" value="SARDA GUM PVT LTD">
+           
           
          </div>
          <div class="set-1">
            <label for="">Notify Party Tax ID</label>
-                      <input type="text" name="n_id" value="" id="n_gst">         </div>
+         
+         <input type="text" name="n_id" value="22AAACR6149L1ZA">
+       
+         </div>
      </div>
    <div class="row">
        <div class="set-1">
          <label for="">Address Line 1</label>
-                         <input type="text" name="n_add_1" value="" id="n_add_1">                                  
+        
+            <input type="text" name="n_add_1" value="H 105 To 109, Bajarang Road">
+          
+                                  
          
        </div>
        <div class="set-1">
            <label for="">Address Line 2</label>
-                          <input type="text" name="n_add_2" value="" id="n_add_2">       </div>
+          
+           <input type="text" name="n_add_2" value="Near Maharana Partap Circle">
+          
+       </div>
    </div>
    <div class="row">
      <div class="set-1">
        <label for="">City or Town</label>
-                   <input type="text" name="n_city" value="" id="n_city">          
+       
+        <input type="text" name="n_city" value="Pali">
+      
+          
      </div>
      <div class="set-1">
        <label for="">State</label>
-                   <input type="text" name="n_state" value="" id="n_state">          
+       
+        <input type="text" name="n_state" value="Rajathan">
+           
+          
      </div>
    </div>
    <div class="row">
        <div class="set-1">
          <label for="">Country</label>
-                         <input type="text" name="n_c" value="" id="n_country">          
+       
+            <input type="text" name="n_c" value="India">
+                
+          
          
        </div>
        <div class="set-1">
          <label for="">Pincode</label>
-                    <input type="text" name="n_pin" value="" id="n_pin">
-                  </div>
+       
+         <input type="text" name="n_pin" value="306401">
+       
+       </div>
      </div>
       </div>
   <!-- noty end -->
 
+
+    
   <div class="row" >
     <div class="set-1" style="width: 100%;" id="set-width">
     <table style="width: 100%;border: 0.5px solid #ddd;border-radius: 5px;padding: 0.8rem;" id="table_filed">
+   
         <tr>
         <th style="text-align: left;"><a for=""  style="font-weight: normal;">C.P. Name</a></th>
         <th style="text-align: left;"> <a for=""  style="font-weight: normal;">Mail</a></th>
        <th style="text-align: left;"> <a for=""  style="font-weight: normal;">Mobile No.</a></th>
     </tr>
-    <tr>
-        <td ><input type="text" name="contact[]" style="width: 95%;"></td>
-        <td><input type="email" name="c_mail[]"  style="width: 95%;"></td>
-        <td><input type="text" name="c_mobi[]"  style="width: 95%;"></td>
-        <td style="margin-left:1rem;width:1%;"><a id="add_row" class="btn btn-p" >Add</a></td>
-    </tr>
-    </table>
+        <tr>
+        <td ><input type="text" name="contact[]" style="width: 93%;" value="Mahipal Singh"></td>
+        <td><input type="email" name="c_mail[]"  style="width: 93%;" value="mahi@bio.com"></td>
+        <td><input type="text" name="c_mobi[]"  style="width: 93%;" value="5236417893"></td>
+                <td style="margin-left:1rem;width:1%;"><a id="add_row" class="btn btn-p" >Add</a></td>
+            </tr>
+        </table>
 </div>
    
   </div>
 <div class="row">
   <div class="set-1 texta" style="width: 100%;">
     <label for="">Comment</label>
-            <textarea name="comment" id="" cols="5" rows="3" style="resize: none;"></textarea>  </div>
+    <textarea name="comment" id="" cols="5" rows="3" style="resize: none;">ok</textarea>
+  </div>
  
 </div>
-<!-- <div class="row">
+<div class="row">
   <div class="set-1" style="width: 100%;">
-    <a style="text-align:left;color: rgb(92, 90, 90);"><br />
-<b>Warning</b>:  Undefined variable $resu in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>1152</b><br />
-<br />
-<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\xampp\htdocs\erp\create_customer.php</b> on line <b>1152</b><br />
-</a>
+    <a style="text-align:left;color: rgb(92, 90, 90);">Last Edit By Mahipal 13-09-21 11:51 AM</a>
   </div>
-</div> -->
+</div>
   </div>
 </div>
 </form>
@@ -700,75 +830,7 @@ align-items: center;
 
 
 
-<script>
-  function cons()
-  {
-   
-    let cust_name=document.getElementById('cust_name').value;
-    let gst=document.getElementById('gst').value;
-    let cust_add_1=document.getElementById('cust_add_1').value;
-    let cust_add_2=document.getElementById('cust_add_2').value;
-    let cust_city=document.getElementById('cust_city').value;
-    let cust_state=document.getElementById('cust_state').value;
-    let cust_country=document.getElementById('cust_country').value;
-    let cust_pin=document.getElementById('cust_pin').value;
-    // assign
-    document.getElementById('con_name').value=cust_name;
-    document.getElementById('con_gst').value=gst;
-    document.getElementById('con_add_1').value=cust_add_1;
-    document.getElementById('con_add_2').value=cust_add_2;
-    document.getElementById('con_cty').value=cust_city;
-    document.getElementById('con_state').value=cust_state;
-    document.getElementById('con_country').value=cust_country;
-    document.getElementById('con_pin').value=cust_pin;
 
-  }
-
-  function buy()
-  {
-   
-    let cust_name=document.getElementById('cust_name').value;
-    let gst=document.getElementById('gst').value;
-    let cust_add_1=document.getElementById('cust_add_1').value;
-    let cust_add_2=document.getElementById('cust_add_2').value;
-    let cust_city=document.getElementById('cust_city').value;
-    let cust_state=document.getElementById('cust_state').value;
-    let cust_country=document.getElementById('cust_country').value;
-    let cust_pin=document.getElementById('cust_pin').value;
-    // assign
-    document.getElementById('b_name').value=cust_name;
-    document.getElementById('b_gst').value=gst;
-    document.getElementById('b_add_1').value=cust_add_1;
-    document.getElementById('b_add_2').value=cust_add_2;
-    document.getElementById('b_city').value=cust_city;
-    document.getElementById('b_state').value=cust_state;
-    document.getElementById('b_country').value=cust_country;
-    document.getElementById('b_pin').value=cust_pin;
-
-  }
-  function not()
-  {
-   
-    let cust_name=document.getElementById('cust_name').value;
-    let gst=document.getElementById('gst').value;
-    let cust_add_1=document.getElementById('cust_add_1').value;
-    let cust_add_2=document.getElementById('cust_add_2').value;
-    let cust_city=document.getElementById('cust_city').value;
-    let cust_state=document.getElementById('cust_state').value;
-    let cust_country=document.getElementById('cust_country').value;
-    let cust_pin=document.getElementById('cust_pin').value;
-    // assign
-    document.getElementById('n_name').value=cust_name;
-    document.getElementById('n_gst').value=gst;
-    document.getElementById('n_add_1').value=cust_add_1;
-    document.getElementById('n_add_2').value=cust_add_2;
-    document.getElementById('n_city').value=cust_city;
-    document.getElementById('n_state').value=cust_state;
-    document.getElementById('n_country').value=cust_country;
-    document.getElementById('n_pin').value=cust_pin;
-
-  }
-</script>
     <script src="js/js.js"></script>
 </body>
 </html>
